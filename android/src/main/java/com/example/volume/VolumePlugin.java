@@ -77,6 +77,7 @@ public class VolumePlugin implements FlutterPlugin, ActivityAware, MethodCallHan
             int i = call.argument("streamType");
             streamType = i;
             controlVolume(i);
+            result.success(null);
         } else if (call.method.equals("getMaxVol")) {
             result.success(getMaxVol());
         } else if (call.method.equals("getVol")) {
@@ -84,6 +85,7 @@ public class VolumePlugin implements FlutterPlugin, ActivityAware, MethodCallHan
         } else if (call.method.equals("setVol")) {
             int i = call.argument("newVol");
             setVol(i);
+            result.success(0);
         } else {
             result.notImplemented();
         }
